@@ -18,7 +18,8 @@ This is a pattern that would be repeated for every request. Context allows us to
 requests. We define the context as one of the arguments when setting up the apollo server
 
 ```js
-const db = await dbServer.connect();
+// In a real db this would require a connection setup here
+const db = require('./repo');
 
 const server = new ApolloServer({
       schema,
@@ -29,6 +30,7 @@ const server = new ApolloServer({
       }
   });
 ```
+
 
 Now that we have connected the *database*, let's modify our previous resolver functions to go through
 the *database* instead. Each resolver will follow a the pattern describe above
