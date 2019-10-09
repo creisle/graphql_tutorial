@@ -25,6 +25,17 @@ type Biopsy {
     biopsyDate: Date
     diagnosis: String
 }
+
+type Query {
+    getStudies: [Study]
+    getStudy(id: ID): Study
+
+    getPatients: [Patient]
+    getPatient(id: ID): Patient
+
+    getBiopsies: [Biopsy]
+    getBiopsy(id: ID): Biopsy
+}
 `;
 
 module.exports = typeDefs;
