@@ -31,9 +31,14 @@ const resolvers = {
         }
     },
     Query: {
-        getStudies: async (root, args, {db}) => {
+        getStudies: async (root, {name}, {db}) => {
             const session = await db.session();
-            const result = await session.query('Studies').all();
+
+            let query = session.query('Studies');
+            if (name) {
+                query.where({name});
+            }
+            const result = await query.all();
             session.close();
             return result;
         },
