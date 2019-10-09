@@ -36,6 +36,29 @@ type Query {
     getBiopsies: [Biopsy]
     getBiopsy(id: ID): Biopsy
 }
+
+input DateInput {
+    year: Int
+    month: Int
+    day: Int
+}
+
+input StudyInput {
+    name: String!
+}
+
+input PatientInput {
+    studyId: ID!
+    patientStudyId: String!
+    sex: String
+    age: Int
+}
+
+input BiopsyInput {
+    patientId: ID!
+    biopsyDate: DateInput
+    diagnosis: String
+}
 `;
 
 module.exports = typeDefs;
