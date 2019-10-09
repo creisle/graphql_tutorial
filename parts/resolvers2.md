@@ -34,6 +34,17 @@ const resolvers = {
 }
 ```
 
+Try this out with the following query
+
+```graphql
+query {
+  getStudy(id: 1) {
+    name
+    id
+  }
+}
+```
+
 ## Linking Types through FK
 
 To allow the queries to be nested and fetch data we'll need to define resolvers for the relationships.
