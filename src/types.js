@@ -29,7 +29,7 @@ type Biopsy {
 }
 
 type Query {
-    getStudies(name: String): [Study]
+    getStudies(name: String, limit: Int, skip: Int): [Study]
     getStudy(id: ID): Study
 
     getPatients: [Patient]
