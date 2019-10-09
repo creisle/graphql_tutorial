@@ -10,6 +10,7 @@ type Date {
 type Study {
     id: ID
     name: String
+    patients: [Patient]
 }
 
 type Patient {
@@ -17,6 +18,7 @@ type Patient {
     study: Study
     sex: String
     age: Int
+    biopsies: [Biopsy]
 }
 
 type Biopsy {
