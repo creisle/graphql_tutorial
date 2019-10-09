@@ -1,0 +1,94 @@
+{
+    "Studies": [
+        {
+            "id": "1",
+            "name": "Advanced GI Cancers"
+        },
+        {
+            "id": "2",
+            "name": "Refractory Celiacs"
+        },
+        {
+            "id": "2",
+            "name": "x"
+        },
+        {
+            "id": "2",
+            "name": "y"
+        }
+    ],
+    "Patients": [
+        {
+            "id": "1",
+            "patientStudyId": "APC-01",
+            "studyId": "1",
+            "sex": "M",
+            "age": 55,
+            "dateEnrolled": {
+                "year": 2017,
+                "month": 8,
+                "day": 17
+            }
+        },
+        {
+            "id": "2",
+            "patientStudyId": "APC-20",
+            "studyId": "1",
+            "sex": "F",
+            "age": 61
+        },
+        {
+            "id": "3",
+            "patientStudyId": "RC-12332",
+            "studyId": "2",
+            "sex": "F",
+            "age": 32
+        },
+        {
+            "id": "4",
+            "patientStudyId": "RC-87875",
+            "studyId": "2",
+            "sex": "F",
+            "age": 37
+        },
+        {
+            "id": "5",
+            "patientStudyId": "RC-12314",
+            "studyId": "2",
+            "sex": "M",
+            "age": 23
+        }
+    ],
+    "Biopsies": [
+        {
+            "id": "1",
+            "patientId": "1",
+            "biopsyDate": {
+                "year": 2017,
+                "month": 9,
+                "day": 30
+            },
+            "diagnosis": "Colorectal Cancer"
+        },
+        {
+            "id": "2",
+            "patientId": "1",
+            "biopsyDate": {
+                "year": 2019,
+                "month": 1,
+                "day": 6
+            },
+            "diagnosis": "Colorectal Cancer"
+        },
+        {
+            "id": "3",
+            "patientId": "5",
+            "biopsyDate": {
+                "year": 2019,
+                "month": 1,
+                "day": 6
+            },
+            "diagnosis": null
+        }
+    ]
+}
