@@ -31,14 +31,22 @@ const resolvers = {
         }
     },
     Query: {
-        getStudies: async (root, {name}, {db}) => {
+        getStudies: async (root, {name, skip, limit}, {db}) => {
             const session = await db.session();
 
             let query = session.query('Studies');
             if (name) {
                 query.where({name});
             }
-            const result = await query.all();
+            let result = await query.all();
+
+            // NOTE: if this were an actual database you'd probably want to add limit/skip to the query itself
+            if (skip) {
+                result = result.slice(skip);
+            }
+            if (limit) {
+                result = result.slice(0, limit);
+            }
             session.close();
             return result;
         },
