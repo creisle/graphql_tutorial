@@ -83,6 +83,23 @@ const main = () => {
 main();
 ```
 
+Create another file `src/types.js` and add this type definition stub (we will fill this out later)
+
+```js
+const { gql } = require('apollo-server-express');
+
+const typeDefs = gql`
+`;
+
+module.exports = typeDefs;
+```
+
+Finally create the empty resolvers module `src/resolvers.js`
+
+```js
+module.exports = {};
+```
+
 ## Add the start script
 
 Add the start script to the `package.json`
@@ -100,6 +117,8 @@ The server can now be started as follows
 ```
 npm start
 ```
+
+See we have not yet defined any types or resolvers, currently this will throw an error on start
 
 ## Resources
 
