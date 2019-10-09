@@ -59,6 +59,17 @@ input BiopsyInput {
     biopsyDate: DateInput
     diagnosis: String
 }
+
+type Mutation {
+    createStudy(input: StudyInput): Study
+    deleteStudy(id: ID): Study
+
+    createPatient(input: PatientInput): Patient
+    deletePatient(id: ID): Patient
+
+    createBiopsy(input: BiopsyInput): Biopsy
+    deleteBiopsy(id: ID): Biopsy
+}
 `;
 
 module.exports = typeDefs;
