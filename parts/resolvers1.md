@@ -21,6 +21,8 @@ We'll start by writing the resolvers for the queries. Each resolver has the foll
 Try this out by querying what we have already. We can return the list of each type just by copying the
 array from the JSON
 
+In the `src/resolvers.js` file add the following
+
 ```js
 const data = require('./repo/data.json');
 
@@ -31,6 +33,8 @@ const resolvers = {
         getBiopsies: () => [...data.Biopsies]
     }
 }
+
+module.exports = resolvers;
 ```
 
 Try this out with the following query
