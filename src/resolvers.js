@@ -68,6 +68,26 @@ const resolvers = {
             return result;
         }
     },
+    Mutation: {
+        createStudy: async (root, {input}, {db}) => {
+            const session = await db.session();
+            const result = await session.insert(input).into('Studies').commit();
+            session.close();
+            return result;
+        },
+        createPatient: async (root, {input}, {db}) => {
+            const session = await db.session();
+            const result = await session.insert(input).into('Patients').commit();
+            session.close();
+            return result;
+        },
+        createBiopsy: async (root, {input}, {db}) => {
+            const session = await db.session();
+            const result = await session.insert(input).into('Biopsies').commit();
+            session.close();
+            return result;
+        },
+    }
 }
 
 module.exports = resolvers;
