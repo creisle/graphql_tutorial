@@ -97,7 +97,7 @@ const resolvers = {
     ...
     Query: {
         ...
-        getStudies: async (root, {name, skip, offset}, {db}) => {
+        getStudies: async (root, {name, skip, limit}, {db}) => {
             const session = await db.session();
 
             let query = session.query('Studies');
