@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/creisle/graphql_tutorial/issues"
   },
-  "homepage": "https://github.com/creisle/graphql_tutorial#readme"
+  "homepage": "https://github.com/creisle/graphql_tutorial#readme",
+  "dependencies": {
+    "apollo-server-express": "^2.9.5",
+    "express": "^4.17.1",
+    "graphql": "^14.5.8"
+  }
 }
