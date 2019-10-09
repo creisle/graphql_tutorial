@@ -44,7 +44,7 @@ type Patient {
 type Biopsy {
     id: ID
     patient: Patient
-    biopsy_date: Date
+    biopsyDate: Date
     diagnosis: String
 }
 ```
