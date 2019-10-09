@@ -1,6 +1,7 @@
 # Part1: Setup
 
 - [Database Tables](#database-tables)
+- [Clone this repo and checkout the start branch](#clone-this-repo-and-checkout-the-start-branch)
 - [Intialize the package](#intialize-the-package)
 - [Install the Required Packages](#install-the-required-packages)
 - [Connect ApolloServer to express](#connect-apolloserver-to-express)
@@ -26,7 +27,18 @@ following 3 tables
   - biopsy_date
   - diagnosis
 
+
+## Clone this repo and checkout the start branch
+
+```bash
+git clone https://github.com/creisle/graphql_tutorial.git
+cd graphql_tutorial
+git checkout start
+```
+
 ## Intialize the package
+
+Next set this up as a node package using npm init
 
 ```
 npm init --yes
@@ -37,7 +49,7 @@ Set `src/index.js` as the entry point
 ## Install the Required Packages
 
 ```
-npm install apollo-server graphql express --save
+npm install apollo-server-express graphql express --save
 ```
 
 ## Connect ApolloServer to express
@@ -46,27 +58,29 @@ Add the following code to the `src/index.js` file.
 
 ```js
 const express = require('express');
-const { ApolloServer, makeExecutableSchema } = require('apollo-server');
+const { ApolloServer, makeExecutableSchema } = require('apollo-server-express');
 
-// Must have a type defined to be able to start
-const typeDefs = `
-type Date {
-    year: Int
-}
-`;  // TODO
-const resolvers = {}; // TODO
+const typeDefs = require('./types');
+const resolvers = require('./resolvers');
 
-const app = express();
-const schema = makeExecutableSchema({typeDefs, resolvers});
 
-const server = new ApolloServer({ schema });
-server.applyMiddleware({ app });
+const main = () => {
+    const app = express();
+    const schema = makeExecutableSchema({typeDefs, resolvers});
 
-// The `listen` method launches a web server.
-const POST = 8080;
-app.listen({ port: PORT }, () =>
-  console.log(`Server ready at http://localhost:${POST}${server.graphqlPath}`)
-);
+    const server = new ApolloServer({
+        schema,
+    });
+    server.applyMiddleware({ app });
+
+    // The `listen` method launches a web server.
+    const PORT = 8080;
+    app.listen({ port: PORT }, () =>
+        console.log(`Server ready at http://localhost:${PORT}${server.graphqlPath}`)
+    );
+};
+
+main();
 ```
 
 ## Add the start script
