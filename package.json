@@ -4,7 +4,7 @@
   "description": "As I was learning GraphQL and having a hard time finding resources at the right level for me. I've compiled this based on a number of other resources which can be found at the end of this README. Each of the resources below have some great information and are worth checking out.",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js"
   },
   "repository": {
     "type": "git",
