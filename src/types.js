@@ -28,8 +28,17 @@ type Biopsy {
     diagnosis: String
 }
 
+input NameComparison {
+    name: String!
+    operator: String
+}
+
+input Clause {
+    OR: [NameComparison!]!
+}
+
 type Query {
-    getStudies(name: String, limit: Int, skip: Int): [Study]
+    getStudies(name: String, limit: Int, skip: Int, filters: Clause): [Study]
     getStudy(id: ID): Study
 
     getPatients: [Patient]
