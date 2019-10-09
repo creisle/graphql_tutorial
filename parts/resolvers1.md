@@ -37,6 +37,12 @@ const resolvers = {
 module.exports = resolvers;
 ```
 
+Start the express server and then go to `localhost:8080/graphql` in your browser to try this out in the graphql playground
+
+```bash
+npm start
+```
+
 Try this out with the following query
 
 ```graphql
@@ -61,6 +67,14 @@ This should return the following
       {
         "name": "Refractory Celiacs",
         "id": "2"
+      },
+      {
+        "name": "x",
+        "id": "3"
+      },
+      {
+        "name": "y",
+        "id": "4"
       }
     ]
   }
